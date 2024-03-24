@@ -1,0 +1,161 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Inter Nerd Font Propo SemiBold;
+  font-size: 15px;
+}
+@import "mocha.css";
+window#waybar {
+  background-color: alpha (@base, 0.4);
+  color: @mantle;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  border-top: 8px transparent;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+  margin: 16px 16px;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#workspaces button {
+  padding: 5px;
+  color: #464761;
+  margin-right: 5px;
+}
+
+#workspaces button.active {
+  color: #a6adc8;
+}
+
+#workspaces button.focused {
+  color: #a6adc8;
+  background: #eba0ac;
+  border-radius: 10px;
+}
+
+#workspaces button.urgent {
+  color: #11111b;
+  background: #a6e3a1;
+  border-radius: 10px;
+}
+
+#workspaces button:hover {
+  background: #11111b;
+  color: #cdd6f4;
+  border-radius: 10px;
+}
+
+#custom-power_profile,
+#custom-weather,
+#window,
+#clock,
+#taskbar,
+#battery,
+#wireplumber,
+#network,
+#cpu,
+#bluetooth,
+#temperature,
+#workspaces,
+#idle_inhibitor,
+#tray,
+#custom-power-menu,
+#backlight {
+  background: alpha(@base, 0.7); /*##background color##*/
+  padding: 0px 10px;
+}
+
+#temperature {
+  color: #5cbeff;
+  border-radius: 0px 0px 0px 0px;
+  margin: 5px 0px 5px 0px;
+}
+
+#temperature.critical {
+  color: #eba0ac;
+}
+
+#backlight {
+  color: #c4c2c2;
+  border-radius: 10px 0px 0px 10px;
+  margin: 5px 0px 5px 0px;
+}
+
+#taskbar {
+  border-radius: 10px;
+  margin: 5px 0px 5px 0px;
+}
+
+#workspaces {
+  margin: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+#custom-power_profile {
+  color: #a6e3a1;
+  border-radius: 0px 10px 10px 0px;
+  margin: 5px 10px 5px 0px;
+}
+
+#window {
+  border-radius: 10px;
+  margin: 5px 60px 5px 60px;
+}
+
+#clock {
+  color: #fab387;
+  border-radius: 10px 10px 10px 10px;
+  margin-left: 10px;
+  margin: 5px 10px 5px 5px;
+}
+
+#network {
+  color: #f9e2af;
+  border-radius: 10px 0px 0px 10px;
+  margin: 5px 0px 5px 0px;
+}
+
+#cpu {
+  color: #c4c2c2;
+  border-radius: 10px 0px 0px 10px;
+  margin: 5px 0px 5px 10px;
+}
+#bluetooth {
+  color: #89b4fa;
+  border-radius: 0px 10px 10px 0px;
+  margin: 5px 10px 5px 0px;
+}
+
+#wireplumber {
+  color: #89b4fa;
+  margin: 5px 0px 5px 0px;
+}
+
+#battery {
+  color: #a6e3a1;
+  margin: 5px 0px 5px 0px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+#custom-weather {
+  border-radius: 0px 10px 10px 0px;
+  border-right: 0px;
+  margin-left: 0px;
+}
+
+#custom-power-menu {
+  margin: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+
+#tray {
+  margin: 5px 10px 5px 10px;
+  border-radius: 10px;
+}
+#idle_inhibitor {
+  color: #c4c2c2;
+  border-left: 0px;
+  border-right: 0px;
+  margin: 5px 0px 5px 0px;
+}

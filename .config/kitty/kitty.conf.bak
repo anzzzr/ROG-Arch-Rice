@@ -1,0 +1,14 @@
+include ~/.config/kitty/mocha.conf
+font_family      JetBrainsMono Nerd Font SemiBold
+font_size        15
+font
+bold_font        JetBrainsMono Nerd Font Bold
+italic_font      JetBrainsMono Nerd Font SemiBold Italic
+bold_italic_font JetBrainsMono Nerd Font Bold Italic
+mouse_hide_wait  2.0
+cursor_shape     block
+url_color        #0087bd
+url_style        dotted
+#Close the terminal without confirmation
+confirm_os_window_close 0
+background_opacity 0.50
