@@ -1,0 +1,131 @@
+# Setup monitors
+# See https://wiki.hyprland.org/Configuring/Monitors/
+monitor=,preferred,auto,auto
+
+# Dual monitor example on G15 Strix
+# eDP-1 is the built in monitor while DP-1 is external
+# Both monitors here are at 1440 and 165Hz
+# DP-1 is on the left and  eDP-1 is on the right
+#monitor=DP-1,2560x1440@165,0x0,1
+monitor=eDP-1,1920x1080@120,0x0,1
+
+# See https://wiki.hyprland.org/Configuring/Keywords/ for more
+
+# Execute your favorite apps at launch
+exec-once = ~/.config/hypr/xdg-portal-hyprland
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec-once = systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec-once = waybar
+exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec-once = easyeffects --gapplication-service & 
+exec-once = wl-paste --type text --watch cliphist store
+exec-once = wl-paste --type image --watch cliphist store
+exec-once = hypridle
+exec-once = mount -t ntfs-3g /dev/nvme0n1p3 /mnt/ntfs
+
+#Wallpaper
+exec = swaybg -m fill -i ~/.config/hypr/Walpaper/33
+
+#Notification 
+exec-once=mako
+
+# For all categories, see https://wiki.hyprland.org/Configuring/Variables/
+input {
+    kb_layout = us
+    kb_variant =
+    kb_model =
+    kb_options =
+    kb_rules =
+    follow_mouse = 1
+    touchpad {
+        natural_scroll = yes
+    }
+
+    sensitivity = 0.6 # -1.0 - 1.0, 0 means no modification.
+}
+
+general {
+    layout=dwindle
+    gaps_in=2
+    gaps_out=3
+    border_size=3
+    col.active_border=rgb(9399a5)
+    col.inactive_border = rgba(595959aa)
+   # apply_sens_to_raw=0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
+}
+
+decoration {
+  rounding= 12 
+        drop_shadow = true;
+        #col.shadow = rgba(000055);
+        drop_shadow = false
+
+     blur {
+      enabled = true
+        size = 8
+        passes = 3
+        ignore_opacity= true
+        new_optimizations = true
+        xray=true    
+}
+    
+}
+
+animations {
+    enabled=yes
+
+  bezier = myBezier, 0.10, 0.9, 0.1, 1.05
+
+    animation = windows, 1, 7, myBezier, slide
+    animation = windowsOut, 1, 7, myBezier, slide
+    animation = border, 1, 10, default
+    animation = fade, 1, 7, default
+    animation = workspaces, 1, 6, default
+}
+
+dwindle {
+  pseudotile = yes
+  preserve_split = yes 
+}
+
+master {
+  new_on_top=true
+}
+
+misc {
+  vfr=true
+  disable_hyprland_logo=true
+  disable_splash_rendering=true
+}
+
+gestures {
+    # See https://wiki.hyprland.org/Configuring/Variables/ for more
+    workspace_swipe = on
+}
+
+
+
+# Example windowrule v1
+# windowrule = float, ^(kitty)$
+# Example windowrule v2
+# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+# rules below would make the specific app transparent
+layerrule = blur, waybar
+layerrule=blur,thunar
+layerrule=blur,Rofi
+layerrule=blur,Code
+windowrulev2 = opacity 0.9 0.9,class:^(kitty)$
+windowrulev2 = animation popin,class:^(kitty)$
+ windowrulev2 = opacity 0.90 0.90,class:^(thunar)$
+ windowrulev2 = animation popin,class:^(thunar)$
+windowrulev2 = opacity 0.9 0.9,class:^(Code)$
+#decoration_inactive_opacity = 0.5
+windowrule = float,^(pavucontrol)$
+windowrule = float,^(blueman-manager)$
+windowrule = tile,^(warp-terminal)$
+windowrulev2 = animation popin,class:^(Rofi)$
+
+#keybinds
+source = ~/.config/hypr/binds.conf
+

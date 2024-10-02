@@ -21,7 +21,7 @@ configuration {
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "Inter Medium 13";
+    font:                        "Noto Sans Medium 12";
     background:                  #1E1D2Fff;
     background-alt:              #252525;
     foreground:                  #D9E0EEff;

@@ -7,14 +7,8 @@
   "margin-top": 4,
   "margin-right": 6,
   "spacing": 0, // Gaps between modules (4px)
-  "modules-left": [
-    "cpu",
-    "temperature",
-    "custom/power_profile",
-    "wlr/taskbar",
-    "hyprland/workspaces"
-  ],
-  "modules-center": ["clock"],
+  "modules-left": ["cpu", "temperature", "custom/power_profile", "wlr/taskbar"],
+  "modules-center": ["hyprland/workspaces"],
   "modules-right": [
     "network",
     "bluetooth",
@@ -22,6 +16,7 @@
     "idle_inhibitor",
     "wireplumber",
     "battery",
+    "clock",
     "tray",
     "custom/power-menu"
   ],
@@ -29,23 +24,23 @@
     "format": "{}"
   },
   "cpu": {
-    "format": "󰘚&#8239;{usage}%",
+    "format": "󰘚&#8239; {usage}%",
     "tooltip": false,
-    "on-click": "kitty btop"
+    "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
   },
 
   "temperature": {
     "thermal-zone": 1,
-    "format": "{temperatureC}°C ",
+    "format": " {temperatureC}°C",
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C "
   },
 
   "custom/power_profile": {
     //shows the current power profile and switches to next on click
-    "exec": "asusctl profile -p | sed s:'Active profile is'::",
+    "exec": "exec asusctl profile -p 2>&1 | sed -E 's/Starting version [0-9]+\\.[0-9]+\\.[0-9]+//g' | sed 's/Active profile is//' | xargs",
     "interval": 30,
-    "format": "󰈐{}",
+    "format": "󰈐  {}",
     "on-click": "asusctl profile -n; pkill -SIGRTMIN+8 waybar",
     "signal": 8
   },
@@ -56,11 +51,9 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    // "ignore-list": ["Alacritty"],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    }
+    "ignore-list": ["kitty", "thunar"]
   },
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
@@ -103,7 +96,7 @@
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    "format-wifi": " {essid}",
+    "format-wifi": " ",
     "format-ethernet": "{ipaddr}/{cidr} ",
     "tooltip-format": "{essid} - {ifname} via {gwaddr}",
     "format-linked": "{ifname} (No IP) ",
@@ -111,7 +104,7 @@
     "on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh"
   },
   "bluetooth": {
-    "format": " {status}",
+    "format": "",
     "format-disabled": "󰂲",
     "format-connected": "󰂱 {device_alias}",
     "on-click": " blueman-manager",
@@ -122,7 +115,7 @@
   },
   "backlight": {
     "device": "DP-1",
-    "format": "{icon} {percent}%",
+    "format": "{icon}  {percent}%",
     "format-icons": ["󰃞", "󰃟", "󰃠"],
     "on-click": ""
   },
@@ -134,11 +127,12 @@
     }
   },
   "wireplumber": {
-    "format": "{icon} {volume}% ",
-    "format-muted": "  Muted",
+    "format": " {icon}  {volume}% ",
+    "format-muted": "   Muted",
     "format-icons": ["", "", " "],
     "on-click": "pavucontrol"
   },
+
   "battery": {
     "states": {
       "good": 95,

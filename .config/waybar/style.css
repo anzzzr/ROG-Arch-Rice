@@ -1,6 +1,6 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family: Inter Nerd Font Propo SemiBold;
+  font-family: Noto Sans Medium;
   font-size: 15px;
 }
 @import "mocha.css";
@@ -26,11 +26,11 @@ window#waybar.hidden {
 }
 
 #workspaces button.active {
-  color: #a6adc8;
+  color: #9babcf;
 }
 
 #workspaces button.focused {
-  color: #a6adc8;
+  color: #9babcf;
   background: #eba0ac;
   border-radius: 10px;
 }
@@ -43,7 +43,7 @@ window#waybar.hidden {
 
 #workspaces button:hover {
   background: #11111b;
-  color: #cdd6f4;
+  color: #9babcf;
   border-radius: 10px;
 }
 
@@ -63,12 +63,12 @@ window#waybar.hidden {
 #tray,
 #custom-power-menu,
 #backlight {
-  background: alpha(@base, 0.7); /*##background color##*/
+  background: alpha(@base, 0.5); /*##background color##*/
   padding: 0px 10px;
 }
 
 #temperature {
-  color: #5cbeff;
+  color: #9babcf;
   border-radius: 0px 0px 0px 0px;
   margin: 5px 0px 5px 0px;
 }
@@ -78,7 +78,7 @@ window#waybar.hidden {
 }
 
 #backlight {
-  color: #c4c2c2;
+  color: #9babcf;
   border-radius: 10px 0px 0px 10px;
   margin: 5px 0px 5px 0px;
 }
@@ -93,7 +93,7 @@ window#waybar.hidden {
   border-radius: 10px;
 }
 #custom-power_profile {
-  color: #a6e3a1;
+  color: #9babcf;
   border-radius: 0px 10px 10px 0px;
   margin: 5px 10px 5px 0px;
 }
@@ -104,36 +104,36 @@ window#waybar.hidden {
 }
 
 #clock {
-  color: #fab387;
+  color: #9babcf;
   border-radius: 10px 10px 10px 10px;
   margin-left: 10px;
   margin: 5px 10px 5px 5px;
 }
 
 #network {
-  color: #f9e2af;
+  color: #9babcf;
   border-radius: 10px 0px 0px 10px;
   margin: 5px 0px 5px 0px;
 }
 
 #cpu {
-  color: #c4c2c2;
+  color: #9babcf;
   border-radius: 10px 0px 0px 10px;
   margin: 5px 0px 5px 10px;
 }
 #bluetooth {
-  color: #89b4fa;
+  color: #9babcf;
   border-radius: 0px 10px 10px 0px;
   margin: 5px 10px 5px 0px;
 }
 
 #wireplumber {
-  color: #89b4fa;
+  color: #9babcf;
   margin: 5px 0px 5px 0px;
 }
 
 #battery {
-  color: #a6e3a1;
+  color: #9babcf;
   margin: 5px 0px 5px 0px;
   border-radius: 0px 10px 10px 0px;
 }
@@ -154,7 +154,7 @@ window#waybar.hidden {
   border-radius: 10px;
 }
 #idle_inhibitor {
-  color: #c4c2c2;
+  color: #9babcf;
   border-left: 0px;
   border-right: 0px;
   margin: 5px 0px 5px 0px;
