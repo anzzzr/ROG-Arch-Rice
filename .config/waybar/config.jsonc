@@ -106,8 +106,8 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "󰂱 {device_alias}",
-    "on-click": " blueman-manager",
+    "format-connected": "󰂱",
+    "on-click": "bash ~/.config/waybar/scripts/rofi-bluetooth.sh",
     "tooltip-format": "{num_connections} connected",
     "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}\t{device_battery_percentage}%",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
